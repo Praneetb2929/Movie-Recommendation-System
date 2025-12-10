@@ -46,5 +46,8 @@ The final model enables a user to select a movie and receive 5 similar recommend
 ## 🔥 Example Recommendation
 
 Input:
+<img width="1919" height="1079" alt="Image" src="https://github.com/user-attachments/assets/6fce8cc2-18da-4dd4-a87e-e98a797b7243" />
 
+Output:
+<img width="1919" height="1079" alt="Image" src="https://github.com/user-attachments/assets/d884b99a-7467-4828-bf9f-8747b9da7055" />
 
