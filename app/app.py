@@ -4,7 +4,7 @@ import pandas as pd
 
 st.title("🎬 Movie Recommendation System")
 
-movies_dict = joblib.load("movies_dict.pkl")
+movies_dict = joblib.load("app/movies_dict.pkl")
 similarity = joblib.load("similarity.pkl")
 
 movies = movies_dict['title'].values
