@@ -5,7 +5,17 @@ import pandas as pd
 st.title("🎬 Movie Recommendation System")
 
 movies_dict = joblib.load("app/movies_dict.pkl")
-similarity = joblib.load("similarity.pkl")
+
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+import pandas as pd
+
+movies = pd.DataFrame(movies_dict)
+
+cv = CountVectorizer(max_features=5000, stop_words='english')
+vectors = cv.fit_transform(movies['tags']).toarray()
+
+similarity = cosine_similarity(vectors)
 
 movies = movies_dict['title'].values
 
