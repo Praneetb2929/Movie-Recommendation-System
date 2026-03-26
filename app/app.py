@@ -1,14 +1,13 @@
 import streamlit as st
 import joblib
 import pandas as pd
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
 st.title("🎬 Movie Recommendation System")
 
 movies_dict = joblib.load("app/movies_dict.pkl")
 
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
-import pandas as pd
 
 movies = pd.DataFrame(movies_dict)
 
@@ -18,6 +17,7 @@ vectors = cv.fit_transform(movies['tags']).toarray()
 similarity = cosine_similarity(vectors)
 
 movies = movies_dict['title'].values
+
 
 def recommend(movie):
     movie = movie.lower()
